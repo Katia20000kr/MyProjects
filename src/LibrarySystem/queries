@@ -1,0 +1,15 @@
+\\What books are on loan now?
+SELECT b.title, m.name, l.loan_date
+FROM Loans l
+JOIN Books b ON l.book_id = b.book_id
+JOIN Members m ON l.member_id = m.member_id
+WHERE l.return_date IS NULL;
+
+
+\\Which members have borrowed more than 3 books?
+SELECT m.name, COUNT(l.loan_id) AS loan_count
+FROM Members m
+JOIN Loans l ON m.member_id = l.member_id
+WHERE l.return_date IS NULL
+GROUP BY m.name
+HAVING COUNT(l.loan_id) > 3;

@@ -1,0 +1,2 @@
+INSERT INTO Members (name, email)
+VALUES ('Katia Smith', 'katia@example.com');

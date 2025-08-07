@@ -1,0 +1,7 @@
+UPDATE Loans
+SET return_date = CURRENT_DATE
+WHERE loan_id = 1;
+
+UPDATE Books
+SET copies_available = copies_available + 1
+WHERE book_id = (SELECT book_id FROM Loans WHERE loan_id = 1);

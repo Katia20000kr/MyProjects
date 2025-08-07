@@ -1,0 +1,12 @@
+SELECT copies_available FROM Books WHERE book_id = 1;
+
+BEGIN;
+
+UPDATE Books
+SET copies_available = copies_available - 1
+WHERE book_id = 1 AND copies_available > 0;
+
+INSERT INTO Loans (book_id, member_id)
+VALUES (1, 1);
+
+COMMIT;

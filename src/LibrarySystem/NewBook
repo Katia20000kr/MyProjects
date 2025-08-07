@@ -1,0 +1,2 @@
+INSERT INTO Books (title, author, year_published, copies_available)
+VALUES ('The Lost', 'Umberto Eco', 1980, 3);
